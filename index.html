@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	 <link rel="profile" href="https://gmpg.org/xfn/11"> 
 	 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
@@ -122,6 +122,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
     border: 1px solid #888;
     width: 90%; /* Increased width for better display on mobile */
     max-width: 600px;
+	z-index: 1000;
     border-radius: 10px; /* Optional: Add rounded corners for a modern look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
 }
@@ -265,7 +266,7 @@ class="hfeed site" id="page">
 				</div>
 				<div class="elementor-element elementor-element-245bbde elementor-align-right elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-button"  data-id="245bbde" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper" id="openPopup">
+					<div class="elementor-button-wrapper" id="openPopup1">
 			<a class="elementor-button elementor-button-link elementor-size-sm">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-icon">
@@ -446,8 +447,8 @@ class="post-1446 page type-page status-publish ast-article-single" id="post-1446
 				</div>
 				<div class="elementor-element elementor-element-e4f3e02 elementor-widget elementor-widget-button" data-id="e4f3e02" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+					<div class="elementor-button-wrapper" id="openPopup2">
+			<a class="elementor-button elementor-button-link elementor-size-sm">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-icon">
 				<i aria-hidden="true" class="fas fa-arrow-right"></i>			</span>
@@ -1612,10 +1613,10 @@ other doors - flush doors					</p>
 				</div>
 				<div class="elementor-element elementor-element-ce098ff elementor-align-center elementor-widget elementor-widget-button" data-id="ce098ff" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a class="elementor-button elementor-button-link elementor-size-sm" href="index.html#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjEwMzYiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D">
+					<div class="elementor-button-wrapper" id="openPopup3">
+			<a class="elementor-button elementor-button-link elementor-size-sm">
 						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">Get a quotes</span>
+									<span class="elementor-button-text">Get a quote</span>
 					</span>
 					</a>
 		</div>
@@ -1652,7 +1653,7 @@ other doors - flush doors					</p>
 				<div class="elementor-element elementor-element-5248d49 elementor-mobile-align-right elementor-widget elementor-widget-button" data-id="5248d49" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a class="elementor-button elementor-button-link elementor-size-xs" href="index.html#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjEwMzYiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D">
+			<a class="elementor-button elementor-button-link elementor-size-xs">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-icon">
 				<i aria-hidden="true" class="fab fa-wpforms"></i>			</span>
@@ -1760,7 +1761,7 @@ function makeSticky() {
 // Attach an event listener to the window's scroll event
 window.addEventListener("scroll", makeSticky);
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js" type="text/javascript"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js" type="text/javascript"></script> -->
 
 <style>
   #loader {
@@ -1815,32 +1816,62 @@ const scroll = new LocomotiveScroll({
 });
 </script> -->
 <script>
-	// Get the popup
-	var popup = document.getElementById("inquiryPopup");
-	
-	// Get the button that opens the popup
-	var btn = document.getElementById("openPopup");
-	
-	// Get the <span> element that closes the popup
-	var span = document.getElementById("closePopup");
-	
-	// When the user clicks the button, open the popup
-	btn.onclick = function() {
-	  popup.style.display = "block";
-	}
-	
-	// When the user clicks on <span> (x), close the popup
-	span.onclick = function() {
-	  popup.style.display = "none";
-	}
-	
-	// When the user clicks anywhere outside of the popup, close it
-	window.onclick = function(event) {
-	  if (event.target == popup) {
-		popup.style.display = "none";
-	  }
-	}
-	
-	</script>
+document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById("inquiryPopup");
+    var btn1 = document.getElementById("openPopup1");
+	var btn2 = document.getElementById("openPopup2");
+	var btn3 = document.getElementById("openPopup3");
+    var span = document.getElementById("closePopup");
+
+    if (btn1) {
+        btn1.onclick = function() {
+            console.log("Button 1 clicked");
+            popup.style.display = "block";
+        }
+    } else {
+        console.log("Button 1 not found");
+    }
+
+	if (btn2) {
+        btn2.onclick = function() {
+            console.log("Button 2 clicked");
+            popup.style.display = "block";
+        }
+    } else {
+        console.log("Button 2 not found");
+    }
+
+	if (btn3) {
+        btn3.onclick = function() {
+            console.log("Button 3 clicked");
+            popup.style.display = "block";
+        }
+    } else {
+        console.log("Button 3 not found");
+    }
+
+    if (span) {
+        span.onclick = function() {
+            console.log("Close button clicked");
+            popup.style.display = "none";
+        }
+    } else {
+        console.log("Close button not found");
+    }
+
+    if (popup) {
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                console.log("Outside popup clicked");
+                popup.style.display = "none";
+            }
+        }
+    } else {
+        console.log("Popup not found");
+    }
+});
+
+ </script>
+ 
 	</body>
 </html>

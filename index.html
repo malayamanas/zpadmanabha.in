@@ -941,8 +941,8 @@ other doors - flush doors					</p>
 		<div class="elementor-element elementor-element-c37bd8c e-con-full e-flex e-con e-child" data-id="c37bd8c" data-element_type="container">
 				<div class="elementor-element elementor-element-1190ab3 elementor-invisible elementor-widget elementor-widget-button" data-id="1190ab3" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a class="elementor-button elementor-button-link elementor-size-sm" href="#EnquiryForm">
+					<div class="elementor-button-wrapper" id="openPopup4">
+			<a class="elementor-button elementor-button-link elementor-size-sm">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-icon">
 				<i aria-hidden="true" class="fas fa-arrow-right"></i>			</span>
@@ -1082,8 +1082,8 @@ other doors - flush doors					</p>
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-70afb94 elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="70afb94" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a class="elementor-button elementor-button-link elementor-size-sm" href="index.html#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE1ODUiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D" target="_blank">
+					<div class="elementor-button-wrapper" id="openPopup5">
+			<a class="elementor-button elementor-button-link elementor-size-sm">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-icon">
 				<i aria-hidden="true" class="fas fa-file-download"></i>			</span>
@@ -1821,6 +1821,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var btn1 = document.getElementById("openPopup1");
 	var btn2 = document.getElementById("openPopup2");
 	var btn3 = document.getElementById("openPopup3");
+	var btn4 = document.getElementById("openPopup4");
+	var btn5 = document.getElementById("openPopup5");
     var span = document.getElementById("closePopup");
 
     if (btn1) {
@@ -1848,6 +1850,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     } else {
         console.log("Button 3 not found");
+    }
+
+	if (btn4) {
+        btn4.onclick = function() {
+            console.log("Button 4 clicked");
+            popup.style.display = "block";
+        }
+    } else {
+        console.log("Button 4 not found");
+    }
+
+	if (btn5) {
+        btn5.onclick = function() {
+            console.log("Button 5 clicked");
+            popup.style.display = "block";
+        }
+    } else {
+        console.log("Button 5 not found");
     }
 
     if (span) {
